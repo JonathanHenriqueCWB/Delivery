@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Escondendo Actionbar
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
 
         //Mudara de activity depois um determinado tempo
         new Handler().postDelayed(new Runnable() {

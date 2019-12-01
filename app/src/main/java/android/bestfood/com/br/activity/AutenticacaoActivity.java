@@ -41,11 +41,13 @@ public class AutenticacaoActivity extends AppCompatActivity {
 
 
         //Escondendo Actionbar
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
         //Chamando método inicializarComponentes
         inicializarComponentes();
         //instanciando autenticação
         autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
+//        autenticacao.signOut();
+
         //Verefica usuario logado
         verificarUsuarioLogado();
         //Verefica o switch para saber se cadastro e referente a usuario ou empresa
@@ -95,13 +97,13 @@ public class AutenticacaoActivity extends AppCompatActivity {
                                         try {
                                             throw task.getException();
                                         }catch (FirebaseAuthWeakPasswordException e) {
-                                            erroExecao = "Digite uma senha mais forte";
+                                            erroExecao = ": Digite uma senha mais forte";
                                         }catch (FirebaseAuthInvalidCredentialsException e) {
-                                            erroExecao = "Digite um email valido";
+                                            erroExecao = ": Digite um email valido";
                                         }catch (FirebaseAuthUserCollisionException e){
-                                            erroExecao = "Conta já cadastrada";
+                                            erroExecao = ": Conta já cadastrada";
                                         } catch (Exception e) {
-                                            erroExecao = "ao cadastrar usuario: " + e.getMessage();
+                                            erroExecao = ": ao cadastrar usuario: " + e.getMessage();
                                             e.printStackTrace();
                                         }
 
