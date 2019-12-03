@@ -4,7 +4,9 @@ import android.bestfood.com.br.helper.ConfiguracaoFirebase;
 
 import com.google.firebase.database.DatabaseReference;
 
-public class Empresa {
+import java.io.Serializable;
+
+public class Empresa implements Serializable {
     String idUsuario;
     String urlImagem;
     String nome;
@@ -17,7 +19,7 @@ public class Empresa {
 
     public void salvar(){
         DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebase();
-        DatabaseReference empresaRef = firebaseRef.child("empresa").child(getIdUsuario());
+        DatabaseReference empresaRef = firebaseRef.child("empresas").child(getIdUsuario());
 
         empresaRef.setValue(this);
     }
