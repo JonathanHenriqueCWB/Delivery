@@ -11,6 +11,7 @@ import android.bestfood.com.br.adapter.AdapterProduto;
 import android.bestfood.com.br.helper.ConfiguracaoFirebase;
 import android.bestfood.com.br.helper.UsuarioFirebase;
 import android.bestfood.com.br.listener.RecyclerItemClickListener;
+import android.bestfood.com.br.model.Pedido;
 import android.bestfood.com.br.model.Produto;
 import android.content.Intent;
 import android.os.Bundle;
@@ -126,6 +127,10 @@ public class EmpresaActivity extends AppCompatActivity {
             case R.id.menuNovoProduto:
                 abrirNovoProduto();
                 break;
+
+            case R.id.menuPedidos:
+                abrirPedidos();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -139,6 +144,10 @@ public class EmpresaActivity extends AppCompatActivity {
         } catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    private void abrirPedidos(){
+        startActivity(new Intent(EmpresaActivity.this, PedidosActivity.class));
     }
 
     private void abrirConfiguracoes(){
